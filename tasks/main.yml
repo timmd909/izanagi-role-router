@@ -1,0 +1,9 @@
+---
+
+- include: "software.yml"
+  sudo: yes
+- include: "configure.yml"
+  sudo: yes
+
+- include: "access-point.yml"
+  sudo: yes
