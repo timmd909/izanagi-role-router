@@ -1,9 +1,11 @@
 ---
 
 - include: "software.yml"
-  sudo: yes
+  become: yes
+  become_user: root
 - include: "configure.yml"
-  sudo: yes
+  become: yes
+  become_user: root
 
 - include: "access-point.yml"
   sudo: yes

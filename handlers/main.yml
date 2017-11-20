@@ -1,16 +1,20 @@
 ---
 
 - name: "Restart hostapd"
-  sudo: yes
+  become: yes
+  become_user: root
   service: state=restarted name=hostapd
 
 - name: "Restart DHCPD"
-  sudo: yes
+  become: yes
+  become_user: root
   service: state=restarted name=isc-dhcp-server
 
 - name: "Restart ddclient"
-  sudo: yes
+  become: yes
+  become_user: root
   service: state=restarted name=ddclient
 - name: "Stop ddclient"
-  sudo: yes
+  become: yes
+  become_user: root
   service: state=stopped name=ddclient

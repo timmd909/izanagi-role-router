@@ -1,6 +1,7 @@
 ---
 - name: Install DHCPD
-  sudo: yes
+  become: yes
+  become_user: root
   apt: name=isc-dhcp-server
 
 - name: Install Bridge Utils
