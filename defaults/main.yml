@@ -70,6 +70,24 @@ internal_hosts:
 #    ip: 102
 
 #
+# Virtual Private Network
+#
+
+vpn_host: router
+# Use dyn.org or similar to get a domain like foobar.dyndns.org
+vpn_fqdn: router.izanagi
+vpn_key_email: your-email@example.com
+vpn_key_country: US
+vpn_key_province: PA
+vpn_key_city: Pittsburgh
+vpn_key_organization: Izanagi
+vpn_key_unit: Hacking
+vpn_network: 10.4.20.0
+vpn_netmask: 255.255.255.0
+# Replace with an array of clients
+vpn_clients: null
+
+#
 # Miscellaneous
 #
 

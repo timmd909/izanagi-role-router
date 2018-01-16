@@ -3,9 +3,15 @@
 - include: "software.yml"
   become: yes
   become_user: root
+
 - include: "configure.yml"
   become: yes
   become_user: root
 
 - include: "access-point.yml"
-  sudo: yes
+  become: yes
+  become_user: root
+
+- include: "vpn.yml"
+  become: yes
+  become_user: root
