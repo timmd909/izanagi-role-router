@@ -200,6 +200,7 @@ ifconfig-pool-persist ipp.txt
 # DNS servers provided by opendns.com.
 ;push "dhcp-option DNS 208.67.222.222"
 ;push "dhcp-option DNS 208.67.220.220"
+push "dhcp-option DNS {{ internal_ip_address }}""
 
 # Uncomment this directive to allow different
 # clients to be able to "see" each other.
@@ -207,7 +208,7 @@ ifconfig-pool-persist ipp.txt
 # To force clients to only see the server, you
 # will also need to appropriately firewall the
 # server's TUN/TAP interface.
-;client-to-client
+client-to-client
 
 # Uncomment this directive if multiple clients
 # might connect with the same certificate/key
@@ -242,7 +243,10 @@ keepalive 10 120
 # a copy of this key.
 # The second parameter should be '0'
 # on the server and '1' on the clients.
-tls-auth ta.key 0 # This file is secret
+tls-auth /etc/openvpn/easy-rsa/key/ta.key 0 # This file is secret
+key-direction 0
+# Not sure what's up w/ above, but saw it at
+# https://www.digitalocean.com/community/tutorials/how-to-set-up-an-openvpn-server-on-ubuntu-16-04
 
 # Select a cryptographic cipher.
 # This config item must be copied to
@@ -272,8 +276,8 @@ cipher AES-256-CBC
 #
 # You can uncomment this out on
 # non-Windows systems.
-;user nobody
-;group nogroup
+user nobody
+group nogroup
 
 # The persist options will try to avoid
 # accessing certain resources on restart
