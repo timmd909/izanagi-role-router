@@ -98,3 +98,10 @@ ddclient_hostname: ~
 
 # Should the Web UI be enabled?
 router_web_ui: true
+
+# List of ports to forward, or false to disable
+forwarded_ports: false
+# Example:
+# - outside: 8080
+#   inside: 80
+#   ip: 101
