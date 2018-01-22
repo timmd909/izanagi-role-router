@@ -25,12 +25,6 @@
   template:
     src: etc/network/interfaces.d/wireless.j2
     dest: /etc/network/interfaces.d/wireless
-  when: router_access_point_nic != false
-- name: Remove wireless network interface file
-  file:
-    path: /etc/network/interfaces.d/wireless
-    state: absent
-  when: router_access_point_nic == false
 
 #
 # Configure routing and firewall

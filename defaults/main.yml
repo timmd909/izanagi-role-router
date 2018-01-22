@@ -14,8 +14,9 @@ router_internal_nic: eth1
 #
 
 # Set to false to disable wireless access point
-router_access_point_nic: wlan0
-# Wireless SSID
+# router_access_point_nic: wlan0
+router_access_point_nic: false
+# Wireless SSID for the access point
 router_ssid: "WhatThePuck"
 # Make sure to change the wireless password
 # (btw, see http://bleach.wikia.com/wiki/Kisuke_Urahara)
@@ -73,6 +74,7 @@ internal_hosts:
 # Virtual Private Network
 #
 
+vpn_enabled: false
 vpn_host: router
 # Use dyn.org or similar to get a domain like foobar.dyndns.org
 vpn_fqdn: router.izanagi

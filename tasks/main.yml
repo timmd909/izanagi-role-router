@@ -15,3 +15,4 @@
 - include: "vpn.yml"
   become: yes
   become_user: root
+  when: vpn_enabled == true
