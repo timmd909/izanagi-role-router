@@ -64,6 +64,7 @@
     state: present
     line: "host {{ item.name }} { hardware ethernet {{ item.mac }}; fixed-address {{ internal_ip_octet_1 }}.{{ internal_ip_octet_2 }}.{{ internal_ip_octet_3 }}.{{ item.ip }}; }"
   notify: Restart DHCPD
+  when: internal_hosts != None
 
 #
 # Miscellaneous
