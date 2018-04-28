@@ -3,13 +3,21 @@
 # This file runs only when the access point is enabled
 #
 
-- name: Install hostapd
-  apt: name=hostapd
-  when: router_access_point_nic != false
+# We have to uninstall and then reinstall to make sure that we can
+# switch between Adafruit's custom one and the operating systems default
+- name: Uninstall hostapd if present
+  apt: name=hostapd purge=true state=absent
+
+- name: Remove custom hostapd (if it exists)
+  file: path=/usr/sbin/hostapd state=absent
 
 - name: Uninstall hostapd
   apt: name=hostapd purge=true state=absent
   when: router_access_point_nic == false
+
+- name: Install hostapd
+  apt: name=hostapd
+  when: router_access_point_nic != false
 
 - name: Install custom hostapd
   shell: "{{ item }}"
