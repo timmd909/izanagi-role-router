@@ -107,3 +107,5 @@ forwarded_ports: false
 # - outside: 8080
 #   inside: 80
 #   ip: 101
+
+router_document_root: /var/www/router

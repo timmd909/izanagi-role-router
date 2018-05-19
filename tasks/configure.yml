@@ -96,9 +96,9 @@
 - name: Enable router Apache config
   shell: "a2ensite router"
   notify: "Restart Apache"
-  when: router_web_ui
+  when: router_web_ui == true
 
 - name: Disable router Apache config
   shell: "a2dissite router"
   notify: "Restart Apache"
-  when: not router_web_ui
+  when: router_web_ui == false

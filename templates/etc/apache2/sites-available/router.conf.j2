@@ -9,7 +9,7 @@
 	#ServerName www.example.com
 
 	ServerAdmin webmaster@localhost
-	DocumentRoot /var/www/router
+	DocumentRoot {{ router_document_root }}
 
 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 	# error, crit, alert, emerg.
@@ -32,7 +32,7 @@
 	<VirtualHost _default_:443>
 		ServerAdmin webmaster@localhost
 
-		DocumentRoot /var/www/router
+		DocumentRoot {{ router_document_root }}
 
 		# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 		# error, crit, alert, emerg.
