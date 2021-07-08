@@ -10,6 +10,11 @@
   become_user: root
   service: state=restarted name=isc-dhcp-server
 
+- name: "Restart radvd"
+  become: yes
+  become_user: root
+  service: state=restarted name=radvd
+
 - name: "Restart ddclient"
   become: yes
   become_user: root

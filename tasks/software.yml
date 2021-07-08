@@ -13,6 +13,9 @@
 - name: Install SSHFS
   apt: name=sshfs
 
+- name: Install radvd
+  apt: name=radvd state=latest
+
 #
 # MINIUPNPD didn't even working out... make sure there's no trace
 #

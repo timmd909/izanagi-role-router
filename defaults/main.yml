@@ -6,6 +6,8 @@
 
 # Plug this into the internets
 router_external_nic: eth0
+# router_ipv6_prefix: "fe80::0/64"
+router_ipv6_prefix: "::/64"
 # Plug this into the router
 router_internal_nic: eth1
 

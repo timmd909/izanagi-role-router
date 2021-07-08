@@ -1,0 +1,20 @@
+interface {{ router_internal_nic }}
+{
+  AdvSendAdvert on;
+  MaxRtrAdvInterval 30;
+  AdvOtherConfigFlag on;
+
+  prefix {{ router_ipv6_prefix }}
+  {
+    AdvOnLink on;
+    AdvAutonomous on;
+    AdvRouterAddr on;
+  };
+
+  {# DNSSL lan {
+  };
+
+  RDNSS {{ '{{' }}{{ router_internal_nic }}.address6{{ '}}' }} {
+  };#}
+
+};
