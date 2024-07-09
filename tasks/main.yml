@@ -1,18 +1,18 @@
 ---
 
-- include: "software.yml"
+- import_tasks: "software.yml"
   become: yes
   become_user: root
 
-- include: "configure.yml"
+- import_tasks: "configure.yml"
   become: yes
   become_user: root
 
-- include: "access-point.yml"
+- import_tasks: "access-point.yml"
   become: yes
   become_user: root
 
-- include: "vpn.yml"
+- import_tasks: "vpn.yml"
   become: yes
   become_user: root
   when: vpn_enabled == true
